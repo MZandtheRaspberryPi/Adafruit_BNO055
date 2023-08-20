@@ -22,10 +22,12 @@
 #ifndef __ADAFRUIT_BNO055_H__
 #define __ADAFRUIT_BNO055_H__
 
+#ifndef NOT_ARDUINO
 #include "Arduino.h"
+#include <Adafruit_I2CDevice.h>
+#endif
 
 #include "utility/imumaths.h"
-#include <Adafruit_I2CDevice.h>
 #include <Adafruit_Sensor.h>
 
 /** BNO055 Address A **/

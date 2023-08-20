@@ -27,7 +27,10 @@
  *  MIT license, all text above must be included in any redistribution
  */
 
+
+# ifndef NOT_ARDUINO
 #include "Arduino.h"
+#endif
 
 #include <limits.h>
 #include <math.h>
