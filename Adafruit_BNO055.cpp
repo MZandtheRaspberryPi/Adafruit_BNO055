@@ -454,9 +454,11 @@ imu::Vector<3> Adafruit_BNO055::getVector(adafruit_vector_type_t vector_type) {
     /* in this case, from the Euler data registers
        we read heading then roll then pitch.
        So our local variable x is heading
-       local y is roll, local z is pitch. */
-    xyz[0] = ((double)y) / 16.0;
-    xyz[1] = ((double)z) / 16.0;
+       local y is roll, local z is pitch. pitch is typically
+       rotation about y axis, but in bosch coordinate system
+       it is x axis. */
+    xyz[0] = ((double)z) / 16.0;
+    xyz[1] = ((double)y) / 16.0;
     xyz[2] = ((double)x) / 16.0;
     break;
   case VECTOR_ACCELEROMETER:
